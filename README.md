@@ -37,4 +37,17 @@ It’s built end-to-end: starting from raw data, extensive preprocessing, model 
 ---
 
 ## 🗂️ Project Structure
+UrbanEdge-Gurugram/
+├── Home.py # Streamlit landing page
+├── pages/
+│ ├── Analytics.py # Data visualizations and insights
+│ ├── Predictor.py # ML model and rent estimator
+│ └── Recommendation_System.py# Similar/nearby property recommender
+├── datasets/ # All processed data and matrices
+├── df.pkl # Final cleaned dataset
+├── pipeline.pkl # Trained RandomForest pipeline
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation (this file)
+
+
 
