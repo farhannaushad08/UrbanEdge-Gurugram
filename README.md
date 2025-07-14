@@ -1,17 +1,40 @@
-# 🏙️ UrbanEdge - Gurugram
+# 🏙️ UrbanEdge – Gurugram
 
-**UrbanEdge - Gurugram** is a powerful, interactive Streamlit-based web app for analyzing and predicting real estate prices in Gurugram using machine learning and recommendation systems.
+> An intelligent real estate platform built with Machine Learning and Streamlit that analyzes, predicts, and recommends properties in Gurugram.
 
-## 🔍 Features
+---
 
-- 📊 **Analytics Dashboard** – Visual insights on property prices, area, BHK trends, and more
-- 💰 **Price Prediction** – Estimate property price and rent using Random Forest ML model
-- 🏡 **Recommendation System** – Find similar or nearby apartments based on location and features
-- 🧠 **ML Pipeline** – Preprocessing, outlier handling, encoding, model training, and deployment
+## 🔍 About the Project
 
-## 🚀 How to Run Locally
+**UrbanEdge – Gurugram** is a complete real estate data solution designed to help users explore, understand, and predict property prices in Gurugram. From detailed visual analytics to machine learning predictions and a recommendation engine — this app brings together data science and real estate in an intuitive interface.
 
-```bash
-git clone https://github.com/farhannaushad08/UrbanEdge-Gurugram.git
-cd UrbanEdge-Gurugram
-streamlit run Home.py
+It’s built end-to-end: starting from raw data, extensive preprocessing, model development using `RandomForestRegressor` (with pipelines and encoders), to deployment-ready Streamlit apps.
+
+---
+
+## 🚀 Features at a Glance
+
+| Feature | Description |
+|--------|-------------|
+| 📊 **Analytics Dashboard** | Interactive visualizations for sector-wise prices, BHK trends, area-price relationships, and more |
+| 💰 **Price Predictor** | ML-based price prediction with rent estimation based on features like furnishing, BHK, sector, etc. |
+| 🧠 **Property Recommender** | Suggests similar or nearby properties using cosine similarity matrices |
+| ☁️ **Word Cloud** | Shows most frequent property features from listings |
+| 🗺️ **Geo Map View** | Sector-wise price distribution on an interactive Mapbox map |
+| 🔗 **Live Links** | Directs users to 99acres, MagicBricks, and more based on input |
+
+---
+
+## 🧠 Machine Learning Workflow
+
+- ✔️ Data cleaning (duplicates, outliers)
+- 🔍 Missing value imputation
+- 🏗️ Feature selection and engineering
+- 🧱 OneHot & Ordinal Encoding with `ColumnTransformer`
+- 🔄 Model built using a `Pipeline` (RandomForestRegressor)
+- 💾 Trained model serialized as `pipeline.pkl`
+
+---
+
+## 🗂️ Project Structure
+
