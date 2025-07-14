@@ -1,9 +1,10 @@
 streamlit
 pandas
 numpy
-scikit-learn
 matplotlib
 seaborn
 plotly
+scikit-learn==1.6.1
 wordcloud
 joblib
+urllib3
