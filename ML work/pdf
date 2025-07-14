@@ -1,0 +1,61 @@
+import streamlit as st
+import PyPDF2
+from pdf2image import convert_from_path
+import pytesseract
+from io import BytesIO
+
+def extract_text_from_pdf(pdf_path):
+    # Try extracting text using PyPDF2 first
+    try:
+        with open(pdf_path, 'rb') as file:
+            reader = PyPDF2.PdfReader(file)
+            text = ''
+            for page in reader.pages:
+                text += page.extract_text()
+
+            # If we got text, return it
+            if text.strip():
+                return text
+    except Exception as e:
+        print("Error extracting text with PyPDF2:", e)
+
+    # If PyPDF2 doesn't work, use OCR (for scanned PDFs)
+    print("Fallback to OCR...")
+    return extract_text_from_scanned_pdf(pdf_path)
+
+def extract_text_from_scanned_pdf(pdf_path):
+    # Convert PDF pages to images
+    pages = convert_from_path(pdf_path)
+    text = ''
+
+    for page_number, page in enumerate(pages):
+        # Use pytesseract to extract text from each page (image)
+        page_text = pytesseract.image_to_string(page)
+        text += f"Page {page_number + 1}:\n{page_text}\n\n"
+
+    return text
+
+# Streamlit app UI
+st.title("PDF Text Extraction")
+st.markdown("Upload a PDF file to extract text (either text-based or scanned PDFs).")
+
+# File upload
+uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
+
+if uploaded_file is not None:
+    # Save the uploaded file to a temporary location
+    with open("uploaded_file.pdf", "wb") as f:
+        f.write(uploaded_file.getbuffer())
+
+    # Display PDF file name
+    st.write("Filename:", uploaded_file.name)
+
+    # Extract text from the uploaded PDF
+    text = extract_text_from_pdf("uploaded_file.pdf")
+
+    # Display extracted text
+    if text.strip():
+        st.subheader("Extracted Text:")
+        st.text_area("Text from PDF", text, height=400)
+    else:
+        st.warning("No text extracted from the PDF.")
