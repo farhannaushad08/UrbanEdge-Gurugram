@@ -37,17 +37,73 @@ It’s built end-to-end: starting from raw data, extensive preprocessing, model 
 ---
 
 ## 🗂️ Project Structure
+
+```
 UrbanEdge-Gurugram/
-├── Home.py # Streamlit landing page
+├── Home.py                      # Streamlit landing page
 ├── pages/
-│ ├── Analytics.py # Data visualizations and insights
-│ ├── Predictor.py # ML model and rent estimator
-│ └── Recommendation_System.py# Similar/nearby property recommender
-├── datasets/ # All processed data and matrices
-├── df.pkl # Final cleaned dataset
-├── pipeline.pkl # Trained RandomForest pipeline
-├── requirements.txt # Python dependencies
-├── README.md # Project documentation (this file)
+│   ├── Analytics.py             # Data visualizations and insights
+│   ├── Predictor.py             # ML model and rent estimator
+│   └── Recommendation_System.py# Similar/nearby property recommender
+├── datasets/                   # All processed data and matrices
+├── df.pkl                      # Final cleaned dataset
+├── pipeline.pkl                # Trained RandomForest pipeline
+├── requirements.txt            # Python dependencies
+├── README.md                   # Project documentation (this file)
+```
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend/UI**: Streamlit
+- **Backend/ML**: Python, scikit-learn, pandas, numpy
+- **Visualization**: Plotly, Seaborn, Matplotlib, WordCloud
+- **Model**: RandomForestRegressor inside an ML Pipeline
+- **Recommender**: Cosine Similarity on distance & feature matrices
+
+---
+
+## 🧪 How to Run the Project
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/farhannaushad08/UrbanEdge-Gurugram.git
+cd UrbanEdge-Gurugram
+```
+
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the Streamlit app
+```bash
+streamlit run Home.py
+```
+
+---
+
+## 🌐 Deployment
+
+You can deploy the app for free on [Streamlit Cloud](https://streamlit.io/cloud).
+
+**Steps:**
+- Create a new app on Streamlit Cloud
+- Connect it to your GitHub repo
+- Set the entry point as `Home.py`
+- Make sure heavy `.pkl` files are under 100 MB or use [Git LFS](https://git-lfs.com/)
+
+---
+
+---
+
+## 🙌 Final Note
+
+UrbanEdge – Gurugram is more than just a real estate app — it's a comprehensive data-driven platform that bridges **machine learning** and **urban housing insights**. Whether you're a buyer, investor, or analyst, this tool empowers smarter decisions through meaningful visualizations, predictions, and recommendations.
+
+---
 
 
 
+---
