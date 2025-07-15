@@ -32,43 +32,65 @@ with col2:
     Powered by **Streamlit, Scikit-learn, Pandas, and Plotly.**
     """)
 
-# ---- Features ----
+# ---- Enhanced Feature Section (Cards with Clickable Links) ----
 st.markdown("## 🚀 Features")
+
+# Custom CSS for card styling
 st.markdown("""
 <style>
-.feature-box {
-    background-color: #f2f2f2;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+.feature-card {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    text-align: center;
+    border: 2px solid transparent;
+}
+.feature-card:hover {
+    border: 2px solid #0e6ba8;
+    background-color: #eef6fa;
+    cursor: pointer;
+}
+a.card-link {
+    color: inherit;
+    text-decoration: none;
 }
 </style>
 """, unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns(3)
+
 with col1:
     st.markdown("""
-    <div class='feature-box'>
-        <h3>📈 Smart Analytics</h3>
-        <p>Explore price heatmaps, BHK comparisons, and price distributions across Gurugram.</p>
-    </div>
+    <a class="card-link" href="/Analytics" target="_self">
+        <div class="feature-card">
+            <h4>📈 Smart Analytics</h4>
+            <p>Explore price heatmaps, BHK comparisons, and price distributions across Gurugram.</p>
+        </div>
+    </a>
     """, unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
-    <div class='feature-box'>
-        <h3>🧠 Price Prediction</h3>
-        <p>Enter your property details and get accurate price estimates powered by AI.</p>
-    </div>
+    <a class="card-link" href="/Predictor" target="_self">
+        <div class="feature-card">
+            <h4>🧠 Price Prediction</h4>
+            <p>Enter your property details and get accurate price estimates powered by AI.</p>
+        </div>
+    </a>
     """, unsafe_allow_html=True)
 
 with col3:
     st.markdown("""
-    <div class='feature-box'>
-        <h3>🏡 Personalized Recommendations</h3>
-        <p>Discover similar or nearby properties based on features and location proximity.</p>
-    </div>
+    <a class="card-link" href="/Recommendation_System" target="_self">
+        <div class="feature-card">
+            <h4>🏡 Personalized Recommendation</h4>
+            <p>Discover similar or nearby properties based on features and location proximity.</p>
+        </div>
+    </a>
     """, unsafe_allow_html=True)
+
 
 # ---- Tech Stack ----
 st.markdown("## 🛠 Tech Stack")
